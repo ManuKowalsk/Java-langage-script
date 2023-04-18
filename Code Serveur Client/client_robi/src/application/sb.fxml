@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller">
+	<children>
+		<Button fx:id="buttonExecute" layoutX="497.0" layoutY="276.0" mnemonicParsing="false" onAction="#submit" text="Executer" />
+		<ImageView fx:id="imageField" fitHeight="178.0" fitWidth="318.0" layoutX="51.0" layoutY="181.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@fond.png" />
+         </image></ImageView>
+		<RadioButton fx:id="radioP" layoutX="395.0" layoutY="247.0" mnemonicParsing="false" onAction="#pas" text="Pas à pas">
+         <toggleGroup>
+            <ToggleGroup fx:id="choix" />
+         </toggleGroup></RadioButton>
+		<RadioButton fx:id="radioB" layoutX="395.0" layoutY="272.0" mnemonicParsing="false" onAction="#bloc" text="En bloc" toggleGroup="$choix" />
+      <Label layoutX="32.0" layoutY="69.0" prefHeight="22.0" prefWidth="188.0" text="Entrez vos instructions :">
+         <font>
+            <Font name="Arial Black" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="92.0" layoutY="21.0" text="GEOMETRIE GENERATOR 2000" textFill="#ff00a1">
+         <font>
+            <Font name="Arial Black" size="24.0" />
+         </font>
+      </Label>
+      <Button fx:id="buttonEnvoye" layoutX="497.0" layoutY="238.0" mnemonicParsing="false" onAction="#sendTexte" text="Envoyer" />
+      <MenuBar layoutY="2.0" onMouseClicked="#quitter" prefHeight="25.0" prefWidth="600.0">
+        <menus>
+            <Menu mnemonicParsing="false" text="Fichier">
+               <items>
+                  <MenuItem fx:id="buttonFichier" mnemonicParsing="false" onAction="#getText" text="Ouvrir" />
+                  <MenuItem mnemonicParsing="false" onAction="#quitter" text="Quitter" />
+               </items>
+            </Menu>
+        </menus>
+      </MenuBar>
+      <TextArea fx:id="textField" layoutX="32.0" layoutY="100.0" prefHeight="75.0" prefWidth="538.0" />
+	</children>
+</AnchorPane>
